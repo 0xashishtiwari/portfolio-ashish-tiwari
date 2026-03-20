@@ -16,7 +16,13 @@ export async function getAccessToken(){
         })
     });
 
-    return response.json();
+    const text = await response.text();
+
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error("Failed to parse access token response");
+  }
     
 }
 
@@ -28,5 +34,24 @@ export const getLastPlayedTrack = async ()=>{
             'Authorization': `Bearer ${access_token}`
         }
     });
-    return response.json();
+    // 🚨 Handle rate limit FIRST
+  if (response.status === 429) {
+    const retryAfter = response.headers.get("Retry-After") || "5";
+    throw new Error(`Rate limited. Retry after ${retryAfter}s`);
+  }
+
+  // 🚨 Handle other errors
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(text || "Spotify API error");
+  }
+
+  // ✅ Safe parse
+  const text = await response.text();
+
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error("Invalid JSON from Spotify");
+  }
 }
