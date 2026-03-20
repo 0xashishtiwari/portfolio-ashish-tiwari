@@ -59,7 +59,7 @@ const Name = () => {
   </span>
 
   <span className="hidden sm:inline font-semibold py-1">
-    On a Mission
+    Online
   </span>
 </Badge>
         </div>
