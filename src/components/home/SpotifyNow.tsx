@@ -11,11 +11,10 @@ export default function SpotifyCard() {
     useSpotifyStore();
 
   useEffect(() => {
+    // call this only once on mount to avoid excessive calls and rate-limiting issues
     fetchCurrentTrack();
 
-    const interval = setInterval(fetchCurrentTrack, 30000); // Refresh every 30 seconds
-
-    return () => clearInterval(interval);
+    
   }, [fetchCurrentTrack]);
 
   // ✅ KEY FIX: show skeleton immediately if no track
