@@ -10,6 +10,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Quote from "@/components/Quote";
+import CursorGlow from "@/components/CursorGlow";
 
 const fontSerif = Geist_Mono({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body className={`${geist.variable} ${fontSerif.variable} ${fontMono.variable} antialiased transition-colors duration-400 ease-in-out  `} >
         <ThemeProvider>
           <TooltipProvider>
+            <CursorGlow/>
             <Navbar/>
             {children}
             <Quote/>
