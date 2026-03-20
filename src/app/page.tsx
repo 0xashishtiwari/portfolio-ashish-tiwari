@@ -1,8 +1,16 @@
-import React from 'react'
+
+import Contact from '@/components/home/Contact'
+import Name from '@/components/home/Name'
+import SpotifyNow from '@/components/home/SpotifyNow'
+
 
 const HomePage = () => {
   return (
-    <div className='bg-secondary  min-h-screen max-w-3xl mx-auto'>
+    <div className='bg-background min-h-screen max-w-2xl mx-auto'>
+       
+      <Name/>
+      <SpotifyNow/>
+      <Contact/>
       
     </div>
   )
