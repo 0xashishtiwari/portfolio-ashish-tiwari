@@ -37,7 +37,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body className={`${geist.variable} ${fontSerif.variable} ${fontMono.variable} antialiased transition-colors duration-400 ease-in-out  `} >
+      <body className={`${geist.variable} ${fontSerif.variable} ${fontMono.variable} antialiased transition-colors duration-400 ease-in-out `} >
         <ThemeProvider>
           <TooltipProvider>
             <CursorGlow/>

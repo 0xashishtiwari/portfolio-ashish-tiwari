@@ -2,35 +2,12 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import { Badge } from "../ui/badge";
+import SpotifySkeleton from "./SpotifySkeleton";
 import { useSpotifyStore } from "@/store/useSpotifyStore";
 
-function SpotifySkeleton() {
-  return (
-    <div className="px-4 py-6 flex flex-col gap-4">
-
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="h-5 w-24 bg-muted rounded-md animate-pulse" />
-        <div className="h-6 w-20 bg-muted rounded-md animate-pulse" />
-      </div>
-
-      {/* Card */}
-      <div className="flex items-center gap-4 rounded-xl border border-border p-3">
-        <div className="w-16 h-16 rounded-lg bg-muted animate-pulse" />
-
-        <div className="flex flex-col gap-2 w-full">
-          <div className="h-4 w-3/4 bg-muted rounded-md animate-pulse" />
-          <div className="h-3 w-1/2 bg-muted rounded-md animate-pulse" />
-          <div className="h-3 w-1/3 bg-muted rounded-md animate-pulse" />
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function SpotifyCard() {
-  const { track, isLoading, error, fetchCurrentTrack } =
+  const { track,  error, fetchCurrentTrack } =
     useSpotifyStore();
 
   useEffect(() => {
@@ -47,35 +24,15 @@ export default function SpotifyCard() {
   }
 
   return (
-    <div className="px-6 py-2 flex flex-col gap-4">
+    <div className="px-6 py-0 flex flex-col gap-4">
 
       {/* Header */}
       <div className="flex items-center justify-between">
       <h2 className="text-lg font-semibold font-serif">
-  Spotify
+ Just Played
+   
 </h2>
 
-        <Badge
-          variant="outline"
-          className="px-3 py-1 text-xs flex items-center gap-2"
-        >
-          {track.isPlaying ? (
-            <>
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-              </span>
-
-              <span className="text-green-500 text-sm font-semibold">
-                Playing
-              </span>
-            </>
-          ) : (
-            <span className="text-muted-foreground text-sm">
-              Last Played
-            </span>
-          )}
-        </Badge>
       </div>
 
       {/* Card */}
