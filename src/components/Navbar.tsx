@@ -5,10 +5,19 @@ import { Button } from './ui/button'
 import {  MoonIcon, SearchIcon, SunIcon } from 'lucide-react'
 import useThemeStore from '@/store/usetThemeStore'
 import { Tooltip , TooltipContent , TooltipTrigger } from './ui/tooltip'
+import {motion} from 'framer-motion'
+
 const Navbar = () => {
     const { theme, toggleTheme } = useThemeStore();
 
     return (
+
+       <motion.div
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="bg-background/95 max-w-2xl mx-auto p-4 fixed top-0 left-0 right-0 z-50 border-b border-border flex items-center justify-between backdrop-blur"
+    >
         <div className=" bg-background/95 max-w-2xl mx-auto p-4 fixed top-0 left-0 right-0 z-50 border-b  border-border flex items-center justify-between">
   
   <div className="flex items-center gap-5 text-sm text-muted-foreground/80 font-bold">
@@ -50,6 +59,7 @@ const Navbar = () => {
   </div>
 
 </div>
+</motion.div>
     )
 }
 

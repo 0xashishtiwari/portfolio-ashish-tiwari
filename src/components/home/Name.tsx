@@ -7,7 +7,7 @@ import avatar from "../../assets/avatar.png";
 import { Button } from "../ui/button";
 import { ArrowUpRight, Check, Copy } from "lucide-react";
 import Link from "next/link";
-
+import {TypeAnimation} from 'react-type-animation'
 const Name = () => {
   const [copied, setCopied] = useState(false);
 
@@ -65,9 +65,17 @@ const Name = () => {
         </div>
 
         {/* Role / Tagline */}
-        <p className="text-sm text-muted-foreground font-medium">
-          Pixels • Logic • Performance
-        </p>
+        <TypeAnimation
+  sequence={[
+    'Pixels • Logic • Performance',
+    2500,
+    'Code Forged for Speed & Scale',
+    2500,
+  ]}
+  speed={60}
+  repeat={Infinity}
+  className="text-sm text-muted-foreground font-medium"
+/>
 
         {/* Email */}
         <div className="flex items-center gap-2 text-sm justify-center sm:justify-start flex-wrap">
