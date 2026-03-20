@@ -41,7 +41,7 @@ const Name = () => {
 
         {/* Name + Badge */}
         <div className="flex items-center gap-2 justify-center sm:justify-start flex-wrap">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight ">
             Ashish Tiwari
           </h1>
 
@@ -66,7 +66,7 @@ const Name = () => {
 
         {/* Role / Tagline */}
         <p className="text-sm text-muted-foreground font-medium">
-          Full-Stack Developer • React • Next.js
+          Pixels • Logic • Performance
         </p>
 
         {/* Email */}
