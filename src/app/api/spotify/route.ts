@@ -2,9 +2,6 @@ import { getLastPlayedTrack } from "@/lib/spotify";
 
 export async function GET() {
 
-    return Response.json({
-        message : "This service temporarily unavailable due to Spotify API rate limits. Please try again later."
-    }, { status: 503 });
 
   try {
     const data = await getLastPlayedTrack();

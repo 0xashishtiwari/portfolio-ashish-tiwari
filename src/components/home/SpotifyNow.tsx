@@ -15,7 +15,7 @@ export default function SpotifyCard() {
     fetchCurrentTrack();
 
     
-  }, [fetchCurrentTrack]);
+  }, []);
 
   // ✅ KEY FIX: show skeleton immediately if no track
   if (!track) {

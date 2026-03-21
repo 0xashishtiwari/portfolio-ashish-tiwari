@@ -28,6 +28,7 @@ export const useSpotifyStore = create<SpotifyState>()(
       error: null,
 
       fetchCurrentTrack: async () => {
+       
         set({ isLoading: true, error: null });
 
         try {
@@ -49,7 +50,7 @@ export const useSpotifyStore = create<SpotifyState>()(
             error: "Failed to fetch current track",
             isLoading: false,
           });
-        }
+        } 
       },
     }),
     {
