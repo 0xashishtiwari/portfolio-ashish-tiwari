@@ -1,13 +1,13 @@
 'use client'
 import React from 'react'
 import useThemeStore from './usetThemeStore'
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     const { theme } = useThemeStore();
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const root = document.documentElement;
         if (theme === 'dark') {
             root.classList.add('dark');

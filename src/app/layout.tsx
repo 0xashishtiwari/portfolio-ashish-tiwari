@@ -36,7 +36,35 @@ export default function RootLayout({
  
 
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en" className={cn("font-sans", geist.variable)} suppressHydrationWarning  >
+      <head>
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+(function() {
+  try {
+    const stored = localStorage.getItem('theme-store');
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      const theme = parsed.state?.theme;
+
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        document.documentElement.classList.add('dark');
+      }
+    }
+  } catch (e) {}
+})();
+`,
+    }}
+  />
+</head>
       <body className={`${geist.variable} ${fontSerif.variable} ${fontMono.variable} antialiased transition-colors duration-400 ease-in-out `} >
         <ThemeProvider>
           <TooltipProvider>
