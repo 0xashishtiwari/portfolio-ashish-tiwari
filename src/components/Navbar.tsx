@@ -24,9 +24,7 @@ const Navbar = () => {
     <Link href="/" className="hover:text-foreground transition-colors">
       Home
     </Link>
-    <Link href="/blog" className="hover:text-foreground transition-colors">
-      Blog
-    </Link>
+   
     <Link href="/projects" className="hover:text-foreground transition-colors">
       Projects
     </Link>
@@ -36,11 +34,7 @@ const Navbar = () => {
   </div>
 
   <div className="flex items-center text-foreground">
-    <Button variant="outline" size="sm" className="mr-2 border-secondary border-opacity-50 hover:bg-secondary/10">
-      <SearchIcon className="mr-1" size={16} />
-      <div className='hidden md:flex '>Search</div>
-      
-    </Button>
+   
     
     <Tooltip>
       <TooltipTrigger asChild>
