@@ -38,7 +38,7 @@ const ProjectPage = () => {
     >
       {/* Heading */}
       <motion.div variants={itemVariants}>
-        <h1 className="text-3xl font-semibold text-foreground">
+        <h1 className="text-3xl text-foreground">
           Projects
         </h1>
       </motion.div>
